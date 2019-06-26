@@ -13,12 +13,12 @@ you should get
 }
 ```
 
-if you get an erorr: 
+if you get an error: 
 ```
 An error occurred (AccessDeniedException) when calling the ListMeshes operation: User: arn:aws:iam::123abc:user/foo is not authorized to perform: appmesh:ListMeshes on resource: *
 ```
 
-please make sure you apply the [policy](policies/node.json) to you user
+please make sure you apply the [policy](policies/node.json) to your user
 
 
 2. Set some environments to make our life easier
@@ -42,7 +42,7 @@ aws iam get-role-policy --role-name $ROLE_NAME --policy-name AppMesh-Policy-For-
 ```
 
 
-4. Let's test the EKS nodes nad see if they have the required permissions (notice it's configured for Oregon / us-west-2 )
+4. Let's test the EKS nodes and see if they have the required permissions (notice it's configured for Oregon / us-west-2 )
 
 ```
 kubectl apply -f awscli.yaml
@@ -66,3 +66,8 @@ we can delete the job
 ```
 kubectl delete jobs/awscli
 ```
+
+
+### Moving On...
+
+Let's move on to [1-Example-microservice.md](1-Example-microservice.md)
