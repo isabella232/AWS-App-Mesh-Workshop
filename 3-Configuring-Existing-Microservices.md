@@ -1,5 +1,7 @@
 # Configuring existing microservices
 
+The mesh component serves as the App Mesh foundation, and must be created first. We’ll call our mesh dj-app, and define it in the prod namespace
+
 ```
 kubectl create -f 4_create_initial_mesh_components/mesh.yaml
 ```
@@ -19,7 +21,7 @@ aws appmesh list-meshes
 aws appmesh describe-mesh --mesh-name dj-app
 ```
 
-All physical Kubernetes services that interact with each other in App Mesh must first be defined as virtual node objects.
+All services (physical or virtual) that will interact in any way with each other in App Mesh must first be defined as Virtual Node objects. Abstracting out services as Virtual Nodes helps App Mesh build rulesets around inter-service communication. In addition, as we define Virtual Service objects, Virtual Nodes are referenced as the ingress and target endpoints for those Virtual Services. Because of this, it makes sense to define the Virtual Nodes first.
 
 ```
 kubectl create -nprod -f 4_create_initial_mesh_components/nodes_representing_physical_services.yaml
@@ -105,3 +107,6 @@ curl jazz.prod.svc.cluster.local:9080;echo
 curl metal.prod.svc.cluster.local:9080;echo
 ```
 
+## Great Job! Let's move on 
+
+We can now continue to [4-Canary-testing.md](4-Canary-testing.md)
