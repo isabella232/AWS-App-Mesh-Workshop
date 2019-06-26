@@ -1,8 +1,12 @@
 # Canary testing with v2
 
+A canary release is a method of slowly exposing a new version of software. The theory behind it is that by serving the new version of the software initially to say, 5% of requests, if there is a problem, the problem only impacts a very small percentage of users before its discovered and rolled back.
 
+So now back to our DJ App scenario… the V2 of the metal and jazz services are out, and they now include the city each artist is from in the response. Let’s see how we can release v2 versions of metal and jazz services in a canary fashion using App Mesh.
 
-Deploy the jazzv2 deployment
+When we’re complete, requests to metal and jazz will be distributed in a weighted fashion to both the v1 and v2 versions.
+
+Let's deploy a new version of our microservices
 
 ```
 kubectl apply -nprod -f 5_canary/jazz_v2.yaml
@@ -60,4 +64,6 @@ while [ 1 ]; do curl http://jazz.prod.svc.cluster.local:9080/;echo; done
 ```
 
 
+# Congrats on implementing the DJ App onto App Mesh!
 
+Let's look at another aspect of Service Mesh [5-Observability.md](5-Observability.md)
