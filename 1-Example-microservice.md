@@ -18,7 +18,7 @@ kubectl apply -nprod -f 1_create_the_initial_architecture/1_initial_architecture
 And it's services
 
 ```
-kubectl apply -f 1_create_the_initial_architecture/1_initial_architecture_services.yaml
+kubectl apply -nprod -f 1_create_the_initial_architecture/1_initial_architecture_services.yaml
 ```
 
 
