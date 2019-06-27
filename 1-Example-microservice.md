@@ -15,11 +15,20 @@ Now we can deploy the initial architecture
 kubectl apply -nprod -f 1_create_the_initial_architecture/1_initial_architecture_deployment.yaml
 ```
 
+And it's services
+
+```
+kubectl apply -f 1_create_the_initial_architecture/1_initial_architecture_services.yaml
+```
+
+
 Let's see what we have
 
 ```
 kubectl get all -nprod
 ```
+
+
 
 And let's see if everything works as expected
 
