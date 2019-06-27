@@ -13,6 +13,10 @@ aws iam put-role-policy \
 
 
 ```
+kubectl apply -f 6_observability/fluentd.yaml 
+```
+
+```
 kubectl -n kube-system get po -l=k8s-app=fluentd-cloudwatch
 # validate that the Fluentd pods are up and running:
 $ kubectl -n kube-system get po -l=k8s-app=fluentd-cloudwatch
