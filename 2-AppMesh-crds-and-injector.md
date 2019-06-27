@@ -5,7 +5,7 @@ App Mesh injector controller, watches for new pods to be created and automatical
 Let's Install Injectors
 
 ```
-2_create_injector/create.sh
+./2_create_injector/create.sh
 ```
 
 By default, the injector doesn’t act on any pods—you must give it the criteria on what to act on. For the purpose of this workshop, we’ll next configure it to inject the App Mesh sidecar into any new pods created in the prod namespace.
